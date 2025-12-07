@@ -8,8 +8,7 @@
   "files": {
     "includes": [
       "src/**",
-      "!src/routeTree.gen.ts",
-      "!src/components/ui"
+      "!src/routeTree.gen.ts"
     ]
   },
   "formatter": {
