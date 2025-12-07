@@ -42,3 +42,18 @@ While you are technicall ready to [start/build the frontend](#starting--building
 - Install the [React/Redux/React-Native snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets) extension which allows you to automatically generate boilerplate component code by typing e.g. `tsrfce`
 
 ## Starting / Building
+
+To run the frontend with hot-reloading, please run:
+```sh
+bun run dev
+```
+
+If you want to create a final build, run:
+```sh
+bun run build
+```
+
+and then start your production build as follows:
+```sh
+bun run start
+```
