@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cosy-landing-page
+  namespace: cosy
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: cosy-landing-page
+  template:
+    metadata:
+      labels:
+        app: cosy-landing-page
+    spec:
+      containers:
+        - name: cosy-landing-page
+          image: ghcr.io/magenta-mause/cosy-landing-page:v0.0.1
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              memory: "256Mi"
+              cpu: "300m"
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+          readinessProbe:
+            httpGet:
+              path: /index.html
+              port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            failureThreshold: 3
+            successThreshold: 1
+            timeoutSeconds: 2
+          livenessProbe:
+            httpGet:
+              path: /index.html
+              port: 80
+            initialDelaySeconds: 20
+            periodSeconds: 10
+            failureThreshold: 3
+            timeoutSeconds: 2
