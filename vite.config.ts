@@ -22,9 +22,10 @@ export default defineConfig({
           outputPath: 'index.html',
           enabled: true,
           crawlLinks: true,
-        },
+          retryCount: 10,
+          retryDelay: 5000
+        }
       },
-
       pages: [
         {
           path: '/docs',
