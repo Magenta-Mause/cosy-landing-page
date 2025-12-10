@@ -23,7 +23,7 @@ export default defineConfig({
           enabled: true,
           crawlLinks: true,
           retryCount: 10,
-          retryDelay: 5000
+          retryDelay: 5000,
         }
       },
       pages: [

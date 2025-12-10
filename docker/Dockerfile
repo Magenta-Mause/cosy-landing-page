@@ -5,7 +5,7 @@ COPY .. .
 
 RUN bun install --ci
 
-RUN bun run build
+RUN bun run --host 0.0.0.0 build
 
 FROM nginx:stable-alpine AS runner
 
